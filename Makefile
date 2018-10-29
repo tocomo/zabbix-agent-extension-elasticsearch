@@ -25,8 +25,8 @@ clean-all: clean-deps
 
 build:
 	@echo Build
-	ln -s ${PWD}/vendor/ ${PWD}/vendor/src
-	GOPATH="${PWD}/vendor" go build -v -o .out/${BINARYNAME} -ldflags ${LDFLAGS} *.go
+	ln -s $(shell pwd)/vendor/ $(shell pwd)/vendor/src
+	GOPATH="$(shell pwd)/vendor" go build -v -o .out/${BINARYNAME} -ldflags ${LDFLAGS} *.go
 	@echo Done
 
 clean-deps:
